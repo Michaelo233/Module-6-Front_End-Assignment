@@ -159,7 +159,22 @@ document.addEventListener("DOMContentLoaded", function () {
         const scores = JSON.parse(localStorage.getItem("scores")) || [];
         scores.push({player, score});
         localStorage.setItem("scores", JSON.stringify(scores));
-        
+
+    }
+
+    // Display scores
+    function displayScores() {
+        const tableBody = document.querySelector("#score-table tbody");
+        tableBody.innerHTML = "";
+
+        const scores = JSON.parse(localStorage.getItem("scores")) || [];
+
+        scores.forEach((playerScore) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `<td>${playerScore.player}</td>
+                            <td>${playerScore.score}</td>`;
+            tableBody.appendChild(row);
+        })
     }
 
 });
