@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const newPlayerButton = document.getElementById("new-player");
     const usernameInput = document.getElementById("username");
     // Initialize the game
-    // checkUsername(); Uncomment once completed
+    checkUsername();
     fetchQuestions();
     displayScores();
 
@@ -20,6 +20,18 @@ document.addEventListener("DOMContentLoaded", function () {
     function getPlayerName() {
         return sessionStorage.getItem("username");
     } 
+
+    // User session check
+    function checkUsername() {
+        const username = getPlayerName();
+
+        if(username) {
+            newPlayerButton.classList.remove("hidden");
+        } else {
+            newPlayerButton.classList.add("hidden");
+        }
+    }
+    
     /**
      * Fetches trivia questions from the API and displays them.
      */
