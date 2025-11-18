@@ -154,4 +154,12 @@ document.addEventListener("DOMContentLoaded", function () {
         return score;
     }
 
+    // Save score
+    function savePlayerScore(player, score) {
+        const scores = JSON.parse(localStorage.getItem("scores")) || [];
+        scores.push({player, score});
+        localStorage.setItem("scores", JSON.stringify(scores));
+        
+    }
+
 });
