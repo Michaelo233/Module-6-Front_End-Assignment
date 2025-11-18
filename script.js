@@ -22,6 +22,11 @@ document.addEventListener("DOMContentLoaded", function () {
         return sessionStorage.getItem("username");
     } 
 
+    // Clear session storage
+    function clearPlayerName() {
+        sessionStorage.removeItem("username");
+    }
+
     // User session check
     function checkUsername() {
         const username = getPlayerName();
@@ -190,8 +195,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function newPlayer() {
+        clearPlayerName();
         usernameInput.value = "";
-
         checkUsername();
     }
 
