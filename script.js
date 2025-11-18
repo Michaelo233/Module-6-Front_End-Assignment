@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const questionContainer = document.getElementById("question-container");
     const newPlayerButton = document.getElementById("new-player");
     const usernameInput = document.getElementById("username");
+    const clearLocals = document.getElementById("clear-locals")
     // Initialize the game
     checkUsername();
     fetchQuestions();
@@ -201,6 +202,13 @@ document.addEventListener("DOMContentLoaded", function () {
         checkUsername();
         console.log("New Player")
         console.log("Answer the questions and enjoy the game.")
+    }
+
+    clearLocals.addEventListener("click", clearLocalStorage)
+    // Clear the local storage
+    function clearLocalStorage() {
+        localStorage.clear();
+        location.reload();
     }
 
 });

@@ -102,11 +102,11 @@ button {
     background-color: #3700b3;
 }
 
-#new-player {
+#clear-locals, #new-player {
     background-color: #ff0000;
 }
 
-#new-player:hover {
+#clear-locals:hover, #new-player:hover {
     background-color: #e50000;
 }
 
