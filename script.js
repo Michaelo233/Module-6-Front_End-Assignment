@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const newPlayerButton = document.getElementById("new-player");
     const usernameInput = document.getElementById("username");
     const clearLocals = document.getElementById("clear-locals")
+    const submitButton = document.getElementById("submit-game")
     // Initialize the game
     checkUsername();
     fetchQuestions();
@@ -33,8 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const username = getPlayerName();
 
         if(username) {
+            usernameInput.classList.add("hidden");
+            submitButton.classList.add("hidden");
             newPlayerButton.classList.remove("hidden");
         } else {
+            usernameInput.classList.remove("hidden");
+            submitButton.classList.remove("hidden");
             newPlayerButton.classList.add("hidden");
         }
         // console.log("Welcome", username)
