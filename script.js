@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Store Session
     function storePlayerName(name) {
         sessionStorage.setItem("username", name);
+        console.log(sessionStorage.getItem("username"))
     }
 
     // Retrieve stored session from session storage
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             newPlayerButton.classList.add("hidden");
         }
+        console.log("Welcome", username)
     }
 
     /**
@@ -157,7 +159,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 score += 1;
             }
         });
-
+        
+        console.log("Your score is ", score)
         return score;
     }
 
@@ -166,6 +169,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const scores = JSON.parse(localStorage.getItem("scores")) || [];
         scores.push({player, score});
         localStorage.setItem("scores", JSON.stringify(scores));
+
+        console.log(localStorage.getItem("scores"))
 
     }
 
@@ -182,6 +187,12 @@ document.addEventListener("DOMContentLoaded", function () {
                             <td>${playerScore.score}</td>`;
             tableBody.appendChild(row);
         })
+    }
+
+    function newPlayer() {
+        usernameInput.value = "";
+
+        checkUsername();
     }
 
 });
