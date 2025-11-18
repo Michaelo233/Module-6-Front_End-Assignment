@@ -138,4 +138,20 @@ document.addEventListener("DOMContentLoaded", function () {
         // display score
         // new questions
     }
+
+    // calculate score
+    function scoreCalculator(){
+        const questions = document.querySelectorAll("#question-container");
+        let score = 0;
+
+        questions.forEach((question) => {
+            const playerAnswer = question.querySelector("input[type='radio']:checked");
+            if (playerAnswer && playerAnswer.dataset.correct === "true") {
+                score += 1;
+            }
+        });
+
+        return score;
+    }
+
 });
