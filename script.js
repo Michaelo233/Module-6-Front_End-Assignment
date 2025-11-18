@@ -15,6 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function storePlayerName(name) {
         sessionStorage.setItem("username", name);
     }
+
+    // Retrieve stored session from session storage
+    function getPlayerName() {
+        return sessionStorage.getItem("username");
+    } 
     /**
      * Fetches trivia questions from the API and displays them.
      */
