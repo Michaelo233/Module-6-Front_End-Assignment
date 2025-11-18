@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
             newPlayerButton.classList.add("hidden");
         }
     }
-    
+
     /**
      * Fetches trivia questions from the API and displays them.
      */
@@ -124,5 +124,18 @@ document.addEventListener("DOMContentLoaded", function () {
     function handleFormSubmit(event) {
         event.preventDefault();
         //... form submission logic including setting cookies and calculating score
+
+        let username = getPlayerName();
+        if (!username) {
+            const playerInput = usernameInput.value.trim();
+            if (playerInput === "") return;
+            username = playerInput;
+            storePlayerName(username);
+        }
+
+        // Score Calculation
+        // Save score
+        // display score
+        // new questions
     }
 });
