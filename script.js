@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Store Session
     function storePlayerName(name) {
         sessionStorage.setItem("username", name);
-        console.log(sessionStorage.getItem("username"))
+        console.log("Welcome", sessionStorage.getItem("username"))
     }
 
     // Retrieve stored session from session storage
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             newPlayerButton.classList.add("hidden");
         }
-        console.log("Welcome", username)
+        // console.log("Welcome", username)
     }
 
     /**
@@ -151,6 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fetchQuestions();
 
         checkUsername();
+        console.log("Form submitted")
     }
 
     // calculate score
@@ -198,6 +199,8 @@ document.addEventListener("DOMContentLoaded", function () {
         clearPlayerName();
         usernameInput.value = "";
         checkUsername();
+        console.log("New Player")
+        console.log("Answer the questions and enjoy the game.")
     }
 
 });
