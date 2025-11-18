@@ -134,9 +134,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Score Calculation
+        const score = scoreCalculator();
+
         // Save score
+        savePlayerScore(username, score);
         // display score
+        displayScores();
         // new questions
+        fetchQuestions();
+
+        checkUsername();
     }
 
     // calculate score
